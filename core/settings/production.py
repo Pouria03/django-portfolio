@@ -10,7 +10,7 @@ ALLOWED_HOSTS = []
 # Database connection to Azure URL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_name',
         'USER': 'db_user',
         'PASSWORD': 'db_password',
@@ -19,5 +19,5 @@ DATABASES = {
     }
 }
 
-## For django storages
+## django static root path
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
