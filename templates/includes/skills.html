@@ -1,28 +1,29 @@
+{% if skills %}
+<section class="skills section" id="skills">
+    <h1 class="section-title-1">Skills</h1>
+    <h2 class="section-title-2">Skills</h2>
+    <div class="container">
+        <div class="grid">
+            {% for skill in skills %}
+            <div class="card skill-card">
+                <h3 class="title">{{skill.title}}</h3>
+                <h6>{{skill.level}}</h6>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% else %}
 <section class="skills section" id="skills">
     <h1 class="section-title-1">Skills</h1>
     <h2 class="section-title-2">Skills</h2>
     <div class="container">
         <div class="grid">
             <div class="card skill-card">
-                <h3 class="title">Python</h3>
-                <h6>mid-level</h6>
-            </div>
-            <div class="card skill-card">
-                <h3 class="title">Django</h3>
-                <h6>mid-level</h6>
-            </div>
-            <div class="card skill-card">
-                <h3 class="title">HTML CSS</h3>
-                <h6>mid-level</h6>
-            </div>
-            <div class="card skill-card">
-                <h3 class="title">Java script</h3>
-                <h6>begginer</h6>
-            </div>
-            <div class="card skill-card">
-                <h3 class="title">rest framework</h3>
-                <h6>begginer</h6>
+                <h3 class="title">skill title</h3>
+                <h6>skill-level</h6>
             </div>
         </div>
     </div>
 </section>
+{% endif %}

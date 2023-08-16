@@ -3,8 +3,8 @@ from home_app import models
 
 # Create your views here.
 def index_view(request):
-    home_data = models.Home.objects.all()
-    about_data = models.About.objects.all()
+    home_data = models.Home.objects.last()
+    about_data = models.About.objects.last()
     skills = models.Skill.objects.all()
     services = models.Service.objects.all()
     resumes = models.Resume.objects.all()

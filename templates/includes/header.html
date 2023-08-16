@@ -1,6 +1,6 @@
 <header>
     <div class="navbar">
-        <a href="" class="logo" id="headerLogo">Pouria</a>
+        <a href="" class="logo" id="headerLogo">{% if site_info.site_name%}{{site_info.site_name}} {%else%}siteName{%endif%}</a>
         <nav class="nav-items" id="navItems">
             <a href="#home">home</a>
             <a href="#about">about</a>

@@ -1,3 +1,35 @@
+{% if about_data %}
+<section class="about section" id="about">
+    <h1 class="section-title-1">About Me</h1>
+    <h2 class="section-title-2">About Me</h2>
+    <div class="container">
+        <div class="about-img">
+            <img src="{{about_data.image.url}}" alt="">
+        </div>
+
+        <div class="description">
+            <div class="about-info">
+                <h2>I'm {{about_data.full_name}}</h2>
+                <h4>A <span class="job">{{about_data.job_title}}</span></h4>
+                <p>
+                    {{about_data.description}}
+                </p>
+            </div>
+                <div class="experience">
+                    <div class="yers-experience">
+                        <span class="experience-spans">+{{about_data.years_of_experience}}</span>
+                        <p>years experience</p>
+                    </div>
+
+                    <div class="project-quantity">
+                        <span class="experience-spans">+{{about_data.projects_quantity}}</span>
+                        <p>succesful projects</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+{% else %}
 <section class="about section" id="about">
     <h1 class="section-title-1">About Me</h1>
     <h2 class="section-title-2">About Me</h2>
@@ -27,3 +59,4 @@
         </div>
     </div>
 </section>
+{% endif %}

@@ -1,7 +1,7 @@
 from django.db import models
 
 class GeneralSiteInfo(models.Model):
-    site_icon = models.ImageField(upload_to='images/generalInfo/')
+    site_name = models.CharField(max_length=100)
     instagram = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)

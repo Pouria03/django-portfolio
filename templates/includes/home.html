@@ -1,3 +1,24 @@
+{% if home_data %}
+<section class="home section" id="home">
+    <div class="container">
+        <div class="media-icons">
+            <a href="{{site_info.instagram}}"><i class="fab fa-instagram"></i></a>
+            <a href="{{site_info.github}}"><i class="fab fa-github-square"></i></a>
+            <a href="{{site_info.linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="info">
+            <h2 class="name">Hi, I am {{home_data.full_name}}</h2>
+            <h3 class="job">{{home_data.job_title}}</h3>
+            <p class="bio">{{home_data.description}}</p>
+            <a href="" class="btn">Contact Me<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+        <div class="home-img">
+            <img src="{{home_data.image.url}}" alt="">
+        </div>
+        </div>
+        <a href="#about" class="scroll-down">scroll down  <i class="fas fa-arrow-down"></i></a>
+</section>
+{% else %}
 <section class="home section" id="home">
     <div class="container">
         <div class="media-icons">
@@ -12,8 +33,9 @@
             <a href="" class="btn">Contact Me <i class="fas fa-arrow-circle-right"></i></a>
         </div>
         <div class="home-img">
-            <img src="images/me.png" alt="image">
+            <img src="" alt="image">
         </div>
-    </div>
-    <a href="#about" class="scroll-down">scroll down  <i class="fas fa-arrow-down"></i></a>
+        </div>
+        <a href="#about" class="scroll-down">scroll down  <i class="fas fa-arrow-down"></i></a>
 </section>
+{% endif %}
