@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = 'django-insecure--u^h@l(p)1hf0-j#s+%^@-&q=&hkx9kjio8qc+z03*t2cz3be*'
 
@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'storages',
     'boto3',
+    # local apps:
+    'home_app.apps.HomeAppConfig',
 
 ]
 
