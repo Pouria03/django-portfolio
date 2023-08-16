@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- ========== Home section ========== -->
+    {% include 'includes/home.html' with home_data=home_data %}
+
+    <!-- ========== About section ========== -->
+    {% include 'includes/about.html' with about_data=about_data %}
+
+    <!-- ======== skills section ========== -->
+    {% include 'includes/skills.html' with skills=skills%}
+
+    <!-- =========== services section =========== -->
+    {% include 'includes/services.html' with services=services %}
+
+    <!-- ============== portfolio section ============== -->
+    {% include 'includes/portfolio.html' with resumes=resumes %}
+
+    <!-- ============== contact section ============== -->
+    {% include 'includes/contact.html' %}
+
+
+{% endblock content %}
