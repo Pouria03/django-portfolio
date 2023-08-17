@@ -1,6 +1,7 @@
 from django.db import models
 
 class GeneralSiteInfo(models.Model):
+    fav_icon = models.ImageField(upload_to='images/favicon/',blank=True,null=True)
     site_name = models.CharField(max_length=100)
     instagram = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)

@@ -56,7 +56,7 @@ burgerMenu.addEventListener('click', () =>{
 
 // ======================== jquery for getting data from contact form ==========================
 $(document).ready(function() {
-    $('.btn').click(function(event) {
+    $('.contact-form-btn').click(function(event) {
         event.preventDefault(); // Prevent the default form submission
 
         var phone = $('input[name="phone"]').val();
