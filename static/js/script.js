@@ -43,7 +43,7 @@ portfolioCards.forEach(portfolioCard => {
 closeModalBtn.addEventListener('click', handleCloseModalClick);
 
 
-// ======================= burger menu ===================================
+// ======================= burger menu =========================================================
 const burgerMenu = document.getElementById('burger');
 const navItems = document.getElementById('navItems');
 const headerLogo = document.getElementById('headerLogo');
@@ -51,3 +51,65 @@ burgerMenu.addEventListener('click', () =>{
   navItems.classList.toggle('active');
   headerLogo.classList.toggle('disable-logo');
 });
+
+
+
+// ======================== jquery for getting data from contact form ==========================
+$(document).ready(function() {
+    $('.btn').click(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var phone = $('input[name="phone"]').val();
+        var email = $('input[name="email"]').val();
+        var name = $('input[name="name"]').val();
+        var content = $('textarea[name="content"]').val();
+
+        // Validate email format
+        if (!isValidEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Validate phone number format
+        if (!isValidPhoneNumber(phone)) {
+            alert('Please enter a valid phone number.');
+            return;
+        }
+
+        // Create the data object to send in the POST request
+        var formData = {
+            'phone': phone,
+            'email': email,
+            'name': name,
+            'content': content,
+            'csrfmiddlewaretoken': $('input[name="csrfmiddlewaretoken"]').val() // Include CSRF token
+        };
+
+        // Send the POST request
+        $.ajax({
+            type: 'POST',
+            url: '/send_message/', // Update with the correct URL
+            data: formData,
+            success: function(response) {
+                // Handle the success response here (e.g., show a success message)
+                alert('your message was sent successfully');
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                // Handle the error here (e.g., display an error message)
+                alert('invalid data, try again later');
+            }
+        });
+    });
+});
+
+// Email format validation function
+function isValidEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Phone number format validation function
+function isValidPhoneNumber(phone) {
+    var phoneRegex = /^09([0-9][0-9]|3[1-9])-?[0-9]{3}-?[0-9]{4}$/; // Change this regex pattern based on your requirements
+    return phoneRegex.test(phone);
+}

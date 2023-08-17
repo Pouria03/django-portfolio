@@ -1,3 +1,4 @@
+{% load static %}
 <section class="contact section" id="contact">
     <h1 class="section-title-1">contact</h1>
     <h2 class="section-title-2">contact</h2>
@@ -8,11 +9,16 @@
             <div><i class="fas fa-map-marker-alt"></i> {{site_info.address}}</div>
         </div>
         <div class="contact-form">
+            {% csrf_token %}
             <input type="text" name="phone" id="" placeholder="phone" autocomplete="off">
             <input type="email" name="email" id="" placeholder="email" autocomplete="off">
             <input type="text" name="name" id="" placeholder="name" autocomplete="off">
             <textarea name="content" id="" placeholder="what do you want to say?" autocomplete="off"></textarea>
-            <button class="btn">submit</button>
+            <button class="btn contact-form-btn">submit</button>
         </div>
     </div>
 </section>
+
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
