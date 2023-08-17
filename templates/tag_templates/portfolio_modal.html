@@ -1,0 +1,15 @@
+{% load custom_tags %}
+<div class="portfolio-modal">
+    <div class="modal-container">
+        <div class="close-modal-btn">&times;</div>
+        <img src="{{resume.image.url}}" alt="image">
+        <div class="modal-info">
+            <h4>{{resume.title}}</h4>
+            <p>
+                {{resume.description}}
+            <br>
+            <a href="">go to link : {{resume.link}}</a>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+{% load custom_tags %}
 {% if resumes %}
 <section class="portfolio section" id="portfolio">
     <h1 class="section-title-1">resume</h1>
@@ -11,25 +12,12 @@
                     <h4 class="portfolio-title">{{resume.title}}</h4>
                 </div>
             </div>
+            {% modal resume.id %}
             {% endfor %}
         </div>
     </div>
 </section>
 
 
-<div class="portfolio-modal">
-    <div class="modal-container">
-        <div class="close-modal-btn">&times;</div>
-        <img src="images/logo.jpeg" alt="image">
-        <div class="modal-info">
-            <h4>title</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente est expedita enim
-                exercitationem quo. Ullam ab dolores libero aperiam recusandae numquam velit nisi
-                ad omnis eos. Impedit ducimus accusamus ullam.
-            <br>
-            <a href="">go to link</a>
-            </p>
-        </div>
-    </div>
-</div>
+
 {% endif %}

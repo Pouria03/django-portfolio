@@ -15,9 +15,9 @@ function handlePortfolioCardClick() {
   const sections = document.querySelectorAll('.section');
 
   // Change the opacity of each section to 0.2
-  sections.forEach(section => {
-    section.style.opacity = 0.2;
-  });
+  // sections.forEach(section => {
+  //   section.style.opacity = .2;
+  // });
 
   // Display the portfolio modal
   portfolioModal.style.display = 'flex';
