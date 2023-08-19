@@ -596,5 +596,10 @@ footer{
     .navbar .disable-logo{
         display: none;
     }
+    .portfolio-modal{
+        max-width:350px;
+        word-break: break-all;
+        overflow:none;
+    }
 
 }
